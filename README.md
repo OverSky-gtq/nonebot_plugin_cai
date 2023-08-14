@@ -6,9 +6,9 @@
 
 <div align="center">
 
-# nonebot-plugin-example
+# nonebot-plugin-cai
 
-_✨ NoneBot 插件简单描述 ✨_
+_✨ 将Character.ai对接到QQ频道 ✨_
 
 
 <a href="./LICENSE">
@@ -55,55 +55,34 @@ _✨ NoneBot 插件简单描述 ✨_
 <summary>使用 nb-cli 安装</summary>
 在 nonebot2 项目的根目录下打开命令行, 输入以下指令即可安装
 
-    nb plugin install nonebot-plugin-example
+    nb plugin install nonebot-plugin-cai
 
 </details>
 
-<details>
-<summary>使用包管理器安装</summary>
-在 nonebot2 项目的插件目录下, 打开命令行, 根据你使用的包管理器, 输入相应的安装命令
 
-<details>
-<summary>pip</summary>
-
-    pip install nonebot-plugin-example
-</details>
-<details>
-<summary>pdm</summary>
-
-    pdm add nonebot-plugin-example
-</details>
-<details>
-<summary>poetry</summary>
-
-    poetry add nonebot-plugin-example
-</details>
-<details>
-<summary>conda</summary>
-
-    conda install nonebot-plugin-example
-</details>
 
 打开 nonebot2 项目根目录下的 `pyproject.toml` 文件, 在 `[tool.nonebot]` 部分追加写入
 
-    plugins = ["nonebot_plugin_example"]
+    plugins = ["nonebot_plugin_cai"]
 
 </details>
 
 ## ⚙️ 配置
+在`__init__.py`中添加你的`char_token`，获取方式：`F12->Application->local_storage`
 
-在 nonebot2 项目的`.env`文件中添加下表中的必填配置
+在config.json中添加你想要对接的AI的char和别名，获取方式:
+beat.character.ai官网对话界面url最后面一串字母
 
-| 配置项 | 必填 | 默认值 | 说明 |
-|:-----:|:----:|:----:|:----:|
-| 配置项1 | 是 | 无 | 配置说明 |
-| 配置项2 | 否 | 无 | 配置说明 |
+暂无
 
 ## 🎉 使用
 ### 指令表
-| 指令 | 权限 | 需要@ | 范围 | 说明 |
+| 指令 | 默认参数 | 需要@ | 参数 | 说明 |
 |:-----:|:----:|:----:|:----:|:----:|
-| 指令1 | 主人 | 否 | 私聊 | 指令说明 |
-| 指令2 | 群员 | 是 | 群聊 | 指令说明 |
+| ep | 无 | 否 | 对话内容 | 发送对话给AI |
+| newchat | 当前AI | 否 | AI别名 | 开启一个新对话 |
+| menu | 无 | 否 | 无 | 列出可对接AI |
+| change | 无 | 否 | AI别名 | 切换对接AI |
+| roll | 无 | 否 | 无 | 回滚一条对话 |
 ### 效果图
 如果有效果图的话
